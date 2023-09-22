@@ -1,5 +1,12 @@
+
 import './globals.css'
 import { Inter } from 'next/font/google'
+
+import { Providers } from '@/Redux/Providers'
+import Nav from '@/Component/Nav'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +18,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+      <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript">  
+</script>
+      </head>
+      <body className={inter.className}>
+        <Providers>
+          <Nav/>
+        {children}
+        <ToastContainer autoClose={1000} theme="dark" />
+        </Providers>
+        </body>
     </html>
   )
 }

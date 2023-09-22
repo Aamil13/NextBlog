@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +24,55 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+
+.userinfo{
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.dis{
+  font-weight: 700;
+  background-color: #1976D2;
+  width: 200px;
+  height: 90px;
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.closeicon{
+  position: absolute;
+  display: none !important;
+  z-index: 9;
+}
+.openicon{
+  position: absolute;
+  display: none !important;
+  z-index: 9;
+}
+
+@media screen and (max-Width: 850px) {
+  .userinfo{
+    grid-template-columns: 100%;
+  }
+  .userInfo{
+    transition: all 0.3s linear;
+    position: absolute;
+    left: -90%;
+    z-index: 7;
+  }
+  .closeicon{
+    display: block !important;
+  }
+  .openicon{
+    display: block !important;
+  }
+}
+
+
+.MuiDialog-paperScrollPaper{
+  border-radius: 12px !important;
+ 
 }
